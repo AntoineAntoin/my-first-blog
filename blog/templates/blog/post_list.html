@@ -12,11 +12,13 @@
 
 
 		<div>
-			<p>Publié: aujourd'hui </p>
-		
-		<h2><a href="">Mon premier Post!</a></h2>
-
-			<p>La Grelotine c’est un jeu du pays de Galles. C'est facile. On peut jouer avec soit des haricots soit des lentilles. Le premier qui annonce la mise dit, mettons, "lance de 16" ou "lance de 32″, ou une "quadruplée" qu’on appelle, c’est une lance de 64, parce qu’on avance de 16 en 16 sauf pour les demi coups. Là, celui qui est à sa gauche soit il augmente au moins de 4 soit il passe et il dit "passe grelot" , soit il parie qu’il va monter au moins de 6 ou de 7, il peut tenter la grelotine. A ce compte là il joue pas, il attend le tour d’après et si le total des mises des 2 autres ne suffit pas à combler l’écart, il gagne sa grelotine et on commence le tour avec des mises de 17 en 17. Mettons là que le suivant annonce une quadruplée, là elle vaut 68, il peut contrer ou il se lève et il tape sur ses haricots en criant "grelote ça piquotte" et il tente la relance jusqu’au tour d’après.</p>
+			{% for post in posts %}
+				<div>
+        				<p>publié: {{ post.published_date }}</p>
+        				<h1><a href="">{{ post.title }}</a></h1>
+        				<p>{{ post.text|linebreaksbr }}</p>
+    				</div>
+			{% endfor %}
 
 		</div>
 
